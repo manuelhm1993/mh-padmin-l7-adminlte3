@@ -311,6 +311,11 @@ return [
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
+        // Menues modificados MH
+        [
+            'text' => 'Dashboard', //Título del menú
+            'url'  => 'home', // Coloca el menú active si coincide con la ruta actual
+        ],
         [
             'text'        => 'pages',
             'url'         => 'admin/pages',
