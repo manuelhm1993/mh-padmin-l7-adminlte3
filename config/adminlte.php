@@ -148,10 +148,10 @@ return [
     |
     */
 
-    'layout_topnav' => null,
-    'layout_boxed' => null,
-    'layout_fixed_sidebar' => null,
-    'layout_fixed_navbar' => null,
+    'layout_topnav' => null, // Reemplaza el sidebar por un navbar
+    'layout_boxed' => null, // Ancho fijo de 1250px
+    'layout_fixed_sidebar' => true, // Fijar el sidebar cuando se hace scroll vertical
+    'layout_fixed_navbar' => true, // Fijar el navbar cuando se hace scroll vertical
     'layout_fixed_footer' => null,
     'layout_dark_mode' => null,
 
