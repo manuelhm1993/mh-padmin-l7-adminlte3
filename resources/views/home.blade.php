@@ -1,7 +1,7 @@
 {{-- Sustituir el layout.app por el layout de adminlte --}}
 @extends('adminlte::page')
 
-@section('title', 'MHenriquez')
+@section('title', 'Dashboard')
 
 @section('content_header')
     <h1>Tablero</h1>
