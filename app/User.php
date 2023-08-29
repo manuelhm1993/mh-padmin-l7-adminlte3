@@ -50,4 +50,11 @@ class User extends Authenticatable
     public function adminlte_desc() {
         return 'Administrador';
     }
+
+    /**
+     * Método para recuperar el rol del usuario
+     */
+    public function adminlte_profile_url() {
+        return 'profile/username';
+    }
 }
