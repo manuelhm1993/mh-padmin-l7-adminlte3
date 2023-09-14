@@ -15,7 +15,7 @@ return [
     */
 
     'title' => '',
-    'title_prefix' => 'MHenriquez - ',
+    'title_prefix' => 'MHenriquez - ', // Prefijo de la página para el título
     'title_postfix' => '',
 
     /*
@@ -132,8 +132,8 @@ return [
     'usermenu_enabled' => true,
     'usermenu_header' => true,
     'usermenu_header_class' => 'bg-secondary',
-    'usermenu_image' => true,
-    'usermenu_desc' => true,
+    'usermenu_image' => true, // Imagen de perfil
+    'usermenu_desc' => true, // Rol de usuario
     'usermenu_profile_url' => true,
 
     /*
@@ -232,11 +232,11 @@ return [
     |
     */
 
-    'right_sidebar' => false,
+    'right_sidebar' => true,
     'right_sidebar_icon' => 'fas fa-cogs',
     'right_sidebar_theme' => 'dark',
     'right_sidebar_slide' => true,
-    'right_sidebar_push' => true,
+    'right_sidebar_push' => false, // No empuja el contenido, se superposiciona
     'right_sidebar_scrollbar_theme' => 'os-theme-light',
     'right_sidebar_scrollbar_auto_hide' => 'l',
 
@@ -300,6 +300,11 @@ return [
             'type'         => 'fullscreen-widget',
             'topnav_right' => true,
         ],
+        [
+            'text'   => 'Link 1',
+            'url'    => '#',
+            'topnav' => true, // Indicar que el menú estará en el navbar
+        ],
 
         // Sidebar items:
         [
@@ -309,12 +314,38 @@ return [
         [
             'text' => 'blog',
             'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
+            'can'  => 'manage-blog', // Permite trabajar con roles y permisos
         ],
         // Menues modificados MH
+        ['header' => 'ADMINISTRADOR'], // Este array es para darle un encabezado y agrupar menús
         [
-            'text' => 'Dashboard', //Título del menú
-            'url'  => 'home', // Coloca el menú active si coincide con la ruta actual
+            'text'        => 'Dashboard', //Título del menú
+            'url'         => 'home', // Coloca el menú active si coincide con la ruta actual
+            'icon'        => 'fas fa-fw fa-home',
+            'label'       => 'Nuevo', // Label o etiqueta del menú
+            'label_color' => 'danger',
+        ],
+        [
+            'text'    => 'Multilevel', // El multinivel es un menú con submenús
+            'submenu' => [
+                [
+                    'text'    => 'Nivel 1',
+                    'submenu' => [ // Se pueden anidar tantos submenús como sean requeridos
+                        [
+                            'text' => 'Nivel 2',
+                            'url'  => '#',
+                        ],
+                        [
+                            'text' => 'Nivel 2',
+                            'url'  => '#',
+                        ],
+                    ]
+                ],
+                [
+                    'text' => 'Nivel 1',
+                    'url'  => '#',
+                ],
+            ]
         ],
         [
             'text'        => 'pages',
